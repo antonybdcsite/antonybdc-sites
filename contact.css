@@ -1,0 +1,158 @@
+/* Allgemeine Stile */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    color: white;
+    overflow: hidden;
+}
+
+/* Vanta-Hintergrund */
+.vanta-container {
+    display: flex;
+    height: 100vh;
+    position: relative;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: rgba(10, 10, 10, 0.9);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar img {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border-radius: 4px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    width: 80%;
+}
+
+.sidebar a.active {
+    font-weight: bold;
+    border-left: 4px solid rgba(0, 122, 255, 1);
+    padding-left: 16px;
+}
+
+.sidebar a:hover {
+    background: rgba(0, 122, 255, 0.3);
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* Titel und Beschreibung */
+.main-content h1 {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    color: white;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+}
+
+.main-content p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    max-width: 700px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Kontaktformular */
+.contact-form {
+    max-width: 600px;
+    width: 100%;
+    background: linear-gradient(145deg, rgba(0, 0, 0, 0.9), rgba(10, 10, 10, 0.8));
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: stretch;
+}
+
+/* Formular Felder */
+.contact-form .form-group {
+    display: flex;
+    flex-direction: column;
+    width: 95.5%;
+}
+
+.contact-form label {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 8px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    resize: none; /* Verhindert das Skalieren des Textfeldes */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.8);
+}
+
+/* Button */
+.contact-form button {
+    padding: 14px 24px;
+    background: linear-gradient(90deg, rgba(0, 123, 255, 1), rgba(0, 255, 255, 1));
+    color: white;
+    font-size: 1.1em;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.contact-form button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(90deg, rgba(0, 102, 255, 1), rgba(0, 200, 255, 1));
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.8);
+}
+
+/* Footer */
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    color: white;
+    font-size: 0.9em;
+}

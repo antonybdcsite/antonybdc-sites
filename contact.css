@@ -8,11 +8,10 @@ body, html {
     overflow: hidden;
 }
 
-/* Vanta-Hintergrund */
 .vanta-container {
     display: flex;
+    flex-direction: column;
     height: 100vh;
-    position: relative;
 }
 
 /* Sidebar */
@@ -25,6 +24,10 @@ body, html {
     align-items: center;
     padding-top: 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    height: 100%;
+    z-index: 10;
+    overflow-y: auto;
 }
 
 .sidebar img {
@@ -55,104 +58,101 @@ body, html {
 
 /* Main Content */
 .main-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    margin-left: 250px;
     padding: 20px;
-    gap: 20px;
+    overflow-y: auto;
+    flex: 1;
 }
 
-/* Titel und Beschreibung */
-.main-content h1 {
-    font-size: 3.5em;
-    margin-bottom: 10px;
-    color: white;
-    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+.content-box {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-.main-content p {
-    font-size: 1.2em;
-    margin-bottom: 40px;
-    max-width: 700px;
+.content-box h1 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.content-box p {
+    text-align: center;
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 20px;
 }
 
 /* Kontaktformular */
 .contact-form {
-    max-width: 600px;
-    width: 100%;
-    background: linear-gradient(145deg, rgba(0, 0, 0, 0.9), rgba(10, 10, 10, 0.8));
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
     gap: 20px;
     align-items: stretch;
 }
 
-/* Formular Felder */
 .contact-form .form-group {
     display: flex;
     flex-direction: column;
-    width: 95.5%;
+    width: 100%;
 }
 
 .contact-form label {
     font-size: 1.2em;
     font-weight: bold;
-    color: rgba(255, 255, 255, 0.9);
     margin-bottom: 8px;
 }
 
 .contact-form input,
 .contact-form textarea {
-    width: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
     padding: 14px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     font-size: 1em;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    resize: none; /* Verhindert das Skalieren des Textfeldes */
+    transition: background-color 0.3s ease-in-out;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-    outline: none;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.8);
-}
-
-/* Button */
 .contact-form button {
     padding: 14px 24px;
     background: linear-gradient(90deg, rgba(0, 123, 255, 1), rgba(0, 255, 255, 1));
-    color: white;
-    font-size: 1.1em;
-    border-radius: 6px;
     border: none;
+    border-radius: 6px;
+    color: white;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 }
 
-.contact-form button:hover {
-    transform: scale(1.05);
-    background: linear-gradient(90deg, rgba(0, 102, 255, 1), rgba(0, 200, 255, 1));
-    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.8);
-}
-
 /* Footer */
 .footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 10px;
-    color: white;
-    font-size: 0.9em;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 12px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .main-content {
+        margin-left: 200px;
+    }
+
+    .content-box {
+        padding: 20px;
+    }
+
+    .contact-form button {
+        font-size: 1em;
+        padding: 10px 20px;
+    }
 }
